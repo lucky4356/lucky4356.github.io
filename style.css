@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 }
 body {
-	background-image: url(subscribe.jpg);
+	background-image: url(smily.jpg);
 	height: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -19,14 +19,14 @@ body {
 a {
 	display: block;
 	background: #00A9D4;
-	color: #fff;
+	color: black;
 	padding: 15px;
 	cursor: pointer;
 	text-decoration: none;
 	width: 320px;
 	text-align: center;
 	border-radius: 5px;
-	font-size: 20px;
+	font-size: 30px;
 }
 a:hover {
 	background: #00729D;
@@ -39,6 +39,6 @@ a:hover {
 	background: #DC6C11;
 }
 p {
-	color:#0000ff;
-	padding: 15px;
+	color:blue;
+	padding: 10px;
 }
