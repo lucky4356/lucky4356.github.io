@@ -1,0 +1,390 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>BHUTAN SAKTHI-LOTT</title>
+<!--<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>-->
+<script src="js/jquery.tools.min.js"></script>
+<link href="css/slidingtabs.css" rel="stylesheet" type="text/css" />
+<link href="css/easySlider.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.scrollTo.js"></script>
+<script type="text/javascript" src="js/slidingtabs.js"></script>
+<!--<script type="text/javascript" src="js/easySlider1.7.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript" src="js/carouFred.js"></script>
+<script type="text/javascript" src="js/fsCarousel.js"></script>
+-->
+
+
+<style type="text/css">
+
+ul#saturday{margin:0;padding:0;list-style-type:none;width:auto;position:relative;display:block;height:36px;text-transform:uppercase;font-size:12px;font-weight:bold;background:transparent url("img/bgOFF.gif") repeat-x top left;font-family:Helvetica,Arial,Verdana,sans-serif;border-bottom:4px solid #336666;border-top:1px solid #C0E2D4;}
+
+ul#saturday li{display:block;float:left;margin:0;pading:0;}
+
+ul#saturday li a{display:block;float:left;color:#874B46;text-decoration:none;padding:12px 20px 0 20px;height:24px;background:transparent url("img/bgDIVIDER.gif") no-repeat top right;}
+
+ul#saturday li a:hover{background:transparent url("img/bgHOVER.gif") no-repeat top right;}
+
+ul#saturday li a.current,ul#saturday li a.current:hover{color:#fff;background:transparent url("img/bgON.gif") no-repeat top right;}
+
+body {
+    font-family:"Lucida Grande","bitstream vera sans","trebuchet ms",sans-serif,verdana;
+}
+
+/* get rid of those system borders being generated for A tags */
+a:active {
+    outline:none;
+}
+
+:focus {
+    -moz-outline-style:none;
+}
+
+body {
+	background-color: #fe4800;
+	background-image: url(img/innerwrapbg3.jpg);
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-repeat: no-repeat;	
+}
+
+</style>
+</head>
+<body style="text-align:center">
+<FORM name="timeform">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <th scope="col"><img src="img/top1.jpg" width="100%" height="120" /></th>
+  </tr>
+  <tr align="center">
+    <td>
+<ul id="saturday">
+<li><a href="index.php" title="Home">Home</a></li>
+<li><a href="result.php" title="Today Result">Today Result</a></li>
+<li><a href="resultdownload.php" title="Download Result">Download Result</a></li>
+<li><a href="" title="">Schemes </a></li>
+<li><a href="" title="">Contact us</a></li>
+<li><b class="textbox" style="padding:10px 18px 0;height:24px;float:left;color:#874B46;">
+<SCRIPT  type="text/javascript" >
+<!--  Hiding for non JS Browsers
+var timetype = 24;
+
+function timing1()
+{
+	   var h = 16;
+	   var m = 44;
+	   var s = 32;
+	  mstxt = ((m < 10) ? ":0" : ":") +
+      m + ((s < 10) ? ":0" : ":") + s;
+      document.timeform.displaytime.value= 
+      (timetype==24)?(((h<10)?"0":"")+
+      h+mstxt):(((h>12)?h-12:h)+mstxt+
+      ((h>=12)?" PM":" AM"));
+} 
+/*function foo($x)
+{
+alert($x);
+
+}
+*/
+function timing(){
+	var y = document.timeform.displaytime.value ;
+   	var h1 = y.substring(0,2);
+	var m1 = y.substring(3,5);
+   	var s1 = y.substring(6,8);
+	s = eval(s1);
+	m = eval(m1);
+	h = eval(h1);
+    if(s<59)
+      {
+	  	 s = s + 1;
+	  }
+	  else
+	  {
+	  	s =0;
+		  if(m<59)
+		  {
+			m=m + 1;
+		  }
+		  else
+		  {
+			m=0;
+		    if(h<23)
+			  {
+				h=h + 1;
+			  }
+			  else
+			  {
+				h=0;
+			  }
+		  }
+	  }
+	  
+  mstxt = ((m < 10) ? ":0" : ":") +
+      m + ((s < 10) ? ":0" : ":") + s;
+   document.timeform.displaytime.value=
+      (timetype==24)?(((h<10)?"0":"")+
+      h+mstxt):(((h>12)?h-12:h)+mstxt+
+      ((h>=12)?" PM":" AM"));
+//   document.timeform.displaytime2.value =  document.timeform.displaytime1.value - document.timeform.displaytime.value ;
+   var diff =
+    new Date( '01/01/2009 ' + document.timeform.displaytime1.value ) -
+    new Date( '01/01/2009 ' + document.timeform.displaytime.value );
+	if (diff >=0 )
+	{
+		str1 = parseInt(diff/1000/60/60);
+		diff = diff - (str1*1000*60*60);
+		var hor1 = "00";
+		if (str1 <= 9)
+		{
+			hor1 = "0"+str1;
+		}else
+		{
+			hor1  = str1;
+		}
+		var min1 = "00";
+		var sec1 = "00";
+		str1 = parseInt(diff/1000/60);
+		diff = diff - (str1*1000*60);
+		if (str1 <= 9)
+		{
+			min1 = "0"+str1;
+		}else
+		{
+			min1  = str1;
+		}
+//		min1 = str1;
+		str1 = parseInt(diff/1000);
+		if (str1 <= 9)
+		{
+			sec1 = "0"+str1.toString();
+		}else
+		{
+			sec1  = str1.toString();
+		}
+	document.timeform.displaytime2.value =  hor1+":"+min1+":"+sec1 ;
+//	document.timeform.displaytime2.value =  hor1+" Hours and "+min1+" Minutes  and "+sec1 +" Seconds " ;
+	
+	}else
+	{
+		document.timeform.displaytime2.value =  "00:00:00";
+	}
+	var myClock = document.getElementById('time');
+	myClock.textContent =  document.timeform.displaytime1.value.substring(0,5); 
+	myClock.innerText  =  document.timeform.displaytime1.value.substring(0,5);
+	var myClock = document.getElementById('time1');
+	myClock.textContent =  document.timeform.displaytime2.value; 
+	myClock.innerText  =  document.timeform.displaytime2.value;
+	
+	//document.timeform.getElementById('test') =  myClock.innerText ;
+	
+	if (hor1<=0 &&  min1 <=0 &&  sec1<=0)
+	{
+		location.reload(); 
+	}
+}
+
+function get_time_difference(earlierDate, laterDate) 
+{
+    var oDiff = new Object();
+
+    //  Calculate Differences
+    //  -------------------------------------------------------------------  //
+    var nTotalDiff = laterDate.getTime() - earlierDate.getTime();
+
+    oDiff.days = Math.floor(nTotalDiff / 1000 / 60 / 60 / 24);
+    nTotalDiff -= oDiff.days * 1000 * 60 * 60 * 24;
+
+    oDiff.hours = Math.floor(nTotalDiff / 1000 / 60 / 60);
+    nTotalDiff -= oDiff.hours * 1000 * 60 * 60;
+
+    oDiff.minutes = Math.floor(nTotalDiff / 1000 / 60);
+    nTotalDiff -= oDiff.minutes * 1000 * 60;
+
+    oDiff.seconds = Math.floor(nTotalDiff / 1000);
+    //  -------------------------------------------------------------------  //
+
+    //  Format Duration
+    //  -------------------------------------------------------------------  //
+    //  Format Hours
+    var hourtext = '00';
+    if (oDiff.days > 0){ hourtext = String(oDiff.days);}
+    if (hourtext.length == 1){hourtext = '0' + hourtext};
+
+    //  Format Minutes
+    var mintext = '00';
+    if (oDiff.minutes > 0){ mintext = String(oDiff.minutes);}
+    if (mintext.length == 1) { mintext = '0' + mintext };
+
+    //  Format Seconds
+    var sectext = '00';
+    if (oDiff.seconds > 0) { sectext = String(oDiff.seconds); }
+    if (sectext.length == 1) { sectext = '0' + sectext };
+
+    //  Set Duration
+    var sDuration = hourtext + ':' + mintext + ':' + sectext;
+    oDiff.duration = sDuration;
+    //  -------------------------------------------------------------------  //
+
+    return oDiff;
+}
+
+
+function displaytime_onclick()
+{
+	timing1();
+	setInterval("timing()",1000);	
+}
+-->
+</SCRIPT>
+
+<style type="text/css">
+
+.textbox
+{
+	background:none;
+	color:#874B46;
+	border:none;
+	cursor:default;
+	font-family:'Trebuchet MS', Arial, Helvetica, sans-serif;
+	text-align:center;
+	font-size:20px;
+}
+
+.label1
+{
+	background:none;
+	color:#000;
+	border:none;
+	cursor:default;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:15px;
+	height:24px;
+
+}
+.table1
+{
+
+	background:none;
+	border:none;
+	color:none;	
+}
+</style>
+<left>
+<BODY onLoad="return displaytime_onclick()" >
+<INPUT type="hidden" name="displaytime" size="8" class="textbox" readonly="" />
+Draw Time : <INPUT type="text" name="displaytime1" size="8" readonly=""  class="textbox" value="17:30:00"/>
+Time Left : <INPUT type="text" name="displaytime2" size="8" class="textbox" readonly=""  value="17:30:00"/>
+</BODY>
+</left>
+
+ 
+
+
+</b></li>
+</ul>      
+	<!--<div style="width: 100%;">-->
+	<!--	<marquee behavior=alternate >-->
+	<!--		<div class="row" style="margin-top: 20px" onClick="window.open('https://eurolott.org')">-->
+	<!--			<div class="col"><img src="comingsoon.jpg" height="50px" 	/>-->
+	<!--			<img src="sunlottlogo.jpg" 	height="50px"/></div>-->
+	<!--		</div>-->
+	<!--	</marquee>	  		-->
+	<!--</div>-->
+		
+    </td>
+  </tr>
+	
+	
+  <tr>
+  <td>
+  
+</FORM>
+</body>
+</html>
+
+
+
+
+<script>
+  $(function() {
+    $("#accordion").tabs(
+    "#accordion div.pane",
+    {tabs: 'h2', effect: 'slide', initialIndex: null}
+  );
+    });
+</script>
+
+
+
+<script>
+// add new effect to the tabs
+$.tools.tabs.addEffect("slide", function(i, done) {
+
+    // 1. upon hiding, the active pane has a ruby background color
+    this.getPanes().slideUp().css({backgroundColor: "#b8128f"});
+
+    // 2. after a pane is revealed, its background is set to its
+    // original color (transparent)
+    this.getPanes().eq(i).slideDown(function()  {
+	$(this).css({backgroundColor: 'transparent'});
+
+	// the supplied callback must be called after the effect has
+        // finished its job
+	done.call();
+    });
+});
+</script>
+
+
+ <div id="scroller-header" style='display:block;background:#fff;'>
+      <div id='scroller-table' style="color:#FFF;" >
+        <ul>
+                  <li style="color:#000"><a href="#panel-1"  rel="panel" style="font-size:10px;color:#000"   >
+           LOTO 10:30 A           </a></li>
+		           <li style="color:#000"><a href="#panel-2"  rel="panel" style="font-size:10px;color:#000"   >
+           JACK 11:30 A           </a></li>
+		           <li style="color:#000"><a href="#panel-3"  rel="panel" style="font-size:10px;color:#000"   >
+           LUCK 12:30 P           </a></li>
+		           <li style="color:#000"><a href="#panel-4"  rel="panel" style="font-size:10px;color:#000"   >
+           QUEE 01:30 P           </a></li>
+		           <li style="color:#000"><a href="#panel-5"  rel="panel" style="font-size:10px;color:#000"   >
+           KING 03:30 P           </a></li>
+		           <li style="color:#000"><a href="#panel-6"  rel="panel" style="font-size:10px;color:#000"   >
+           STAR 05:30 P           </a></li>
+		           <li style="color:#000"><a href="#panel-7"  rel="panel" style="font-size:10px;color:#000"   >
+           JACK 06:30 P           </a></li>
+		           <li style="color:#000"><a href="#panel-8"  rel="panel" style="font-size:10px;color:#000"   >
+           LOTO 07:30 P           </a></li>
+		  
+        </ul>
+      </div>
+	</div> 
+
+<div id="scroller-body">
+  <div id="mask">
+    <div id="panel">
+                  <div id="panel-1" class='panel' style="height:400px;font-family:'Courier New', Courier, monospace;text-align:left;font-size:15px;">
+           </br>LOTO 10:30 AM (TUE)</br></br>DRAW NO :148  DRAW DATE ON. 23-02-2021</br></br>3DIGIT 1 ST PRIZE RS. 10000/-&nbsp;&nbsp;<a style='color:#0000CC' >862</a></br></br>3DIGIT 2 ND PRIZE RS. 1000/- &nbsp;&nbsp;&nbsp;<a style='color:#0000CC' >62</a></br></br></br></br>          </div>
+		           <div id="panel-2" class='panel' style="height:400px;font-family:'Courier New', Courier, monospace;text-align:left;font-size:15px;">
+           </br>JACKPOT 11:30 AM (TUE)</br></br>DRAW NO :148  DRAW DATE ON. 23-02-2021</br></br>3DIGIT 1 ST PRIZE RS. 10000/-&nbsp;&nbsp;<a style='color:#0000CC' >445</a></br></br>3DIGIT 2 ND PRIZE RS. 1000/- &nbsp;&nbsp;&nbsp;<a style='color:#0000CC' >45</a></br></br></br></br>          </div>
+		           <div id="panel-3" class='panel' style="height:400px;font-family:'Courier New', Courier, monospace;text-align:left;font-size:15px;">
+           </br>LUCKY 12:30 PM (TUE)</br></br>DRAW NO :148  DRAW DATE ON. 23-02-2021</br></br>3DIGIT 1 ST PRIZE RS. 10000/-&nbsp;&nbsp;<a style='color:#0000CC' >141</a></br></br>3DIGIT 2 ND PRIZE RS. 1000/- &nbsp;&nbsp;&nbsp;<a style='color:#0000CC' >41</a></br></br></br></br>          </div>
+		           <div id="panel-4" class='panel' style="height:400px;font-family:'Courier New', Courier, monospace;text-align:left;font-size:15px;">
+           </br>QUEEN 01:30 PM (TUE)</br></br>DRAW NO :148  DRAW DATE ON. 23-02-2021</br></br>3DIGIT 1 ST PRIZE RS. 10000/-&nbsp;&nbsp;<a style='color:#0000CC' >812</a></br></br>3DIGIT 2 ND PRIZE RS. 1000/- &nbsp;&nbsp;&nbsp;<a style='color:#0000CC' >12</a></br></br></br></br>          </div>
+		           <div id="panel-5" class='panel' style="height:400px;font-family:'Courier New', Courier, monospace;text-align:left;font-size:15px;">
+           </br>KING 03:30 PM (TUE)</br></br>DRAW NO :148  DRAW DATE ON. 23-02-2021</br></br>3DIGIT 1 ST PRIZE RS. 10000/-&nbsp;&nbsp;<a style='color:#0000CC' >849</a></br></br>3DIGIT 2 ND PRIZE RS. 1000/- &nbsp;&nbsp;&nbsp;<a style='color:#0000CC' >49</a></br></br></br></br>          </div>
+		           <div id="panel-6" class='panel' style="height:400px;font-family:'Courier New', Courier, monospace;text-align:left;font-size:15px;">
+           </br>STAR 05:30 PM (TUE)</br></br>DRAW NO :148  DRAW DATE ON. 23-02-2021</br></br>3DIGIT 1 ST PRIZE RS. 10000/-&nbsp;&nbsp;<a style='color:#0000CC' ></a></br></br>3DIGIT 2 ND PRIZE RS. 1000/- &nbsp;&nbsp;&nbsp;<a style='color:#0000CC' ></a></br></br></br></br>          </div>
+		           <div id="panel-7" class='panel' style="height:400px;font-family:'Courier New', Courier, monospace;text-align:left;font-size:15px;">
+           </br>JACKPOT 06:30 PM (TUE)</br></br>DRAW NO :148  DRAW DATE ON. 23-02-2021</br></br>3DIGIT 1 ST PRIZE RS. 10000/-&nbsp;&nbsp;<a style='color:#0000CC' ></a></br></br>3DIGIT 2 ND PRIZE RS. 1000/- &nbsp;&nbsp;&nbsp;<a style='color:#0000CC' ></a></br></br></br></br>          </div>
+		           <div id="panel-8" class='panel' style="height:400px;font-family:'Courier New', Courier, monospace;text-align:left;font-size:15px;">
+           </br>LOTO 07:30 PM (TUE)</br></br>DRAW NO :148  DRAW DATE ON. 23-02-2021</br></br>3DIGIT 1 ST PRIZE RS. 10000/-&nbsp;&nbsp;<a style='color:#0000CC' ></a></br></br>3DIGIT 2 ND PRIZE RS. 1000/- &nbsp;&nbsp;&nbsp;<a style='color:#0000CC' ></a></br></br></br></br>          </div>
+		  
+		      
+  </div>
+  </div>
+</div>
